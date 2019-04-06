@@ -38,7 +38,7 @@ dict = {
 
 def wait_until(h):
     t = datetime.datetime.today()
-    print('printed at: {}'.format(future))
+    print('printed at: {}'.format(t))
     future = datetime.datetime(t.year,t.month, t.day, h, 0)
     if t.hour >= h:
         future += datetime.timedelta(days=1)
@@ -92,10 +92,10 @@ def main():
             tweet = "XXX" + response.capitalize()
             api.update_status(tweet)
             print(tweet)
-            wait_until(3)
+            wait_until(12)
 
 
-        if cons_fails > 5:
+        if cons_fails > 10:
             break
 
 
